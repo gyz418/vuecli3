@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      <router-link to="/store">store.vue</router-link> |
       <router-link to="/about/1">about1</router-link> |
       <router-link to="/about/2">about2</router-link> |
       <router-link to="/">Home</router-link> |

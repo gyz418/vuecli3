@@ -98,8 +98,12 @@ const router = new Router({
     }*/
     {
       path:'/father',
-      component:()=>import('./views/test/father')
-    }
+      component:()=>import('./views/fatherson/father')
+    },
+    {
+      path:'/store',
+      component:()=>import('./views/vuexpage/store')
+    },
   ]
 });
 let setTitle = (title => {
