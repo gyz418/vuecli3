@@ -92,9 +92,13 @@ const router = new Router({
       }
     },
     // 404 放最后, 后端重定向到首页，前端不用处理了
-    {
+  /*  {
       path: '*',
       component: () => import('./views/404.vue')
+    }*/
+    {
+      path:'/father',
+      component:()=>import('./views/test/father')
     }
   ]
 });

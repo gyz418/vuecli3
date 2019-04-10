@@ -1,22 +1,27 @@
 <template>
     <div>
-      <p @click="email">click email.com</p>
+      <son :myObj="myObj"></son>
+      {{myObj.myval}}
     </div>
 </template>
 
 <script>
+  import son from './son'
   export default {
+    components:{
+      son
+    },
     data () {
-      return {};
+      return {
+        myObj:{
+          myval:''
+        }
+      };
     },
     created () {
       document.title = '首页';
     },
-    methods: {
-      email(){
-        this.$Bus.$emit('emailClick','i am email')
-      }
-    },
+    methods: {}
   };
 
 </script>
