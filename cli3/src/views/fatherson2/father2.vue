@@ -21,7 +21,7 @@
       document.title = '首页';
     },
     computed:{
-
+      // vuex v-model 双向绑定
       newVal:{
         get () {
           return this.$store.state.stateVal;
