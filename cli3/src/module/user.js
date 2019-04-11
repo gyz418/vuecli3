@@ -9,5 +9,8 @@ const getters ={
 export default {
   namespaced:true, // 使用命名空间
   state,
-  getters
+  getters,
+  module:{
+    // 模块中加以再加载模块
+  }
 }
