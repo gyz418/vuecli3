@@ -101,6 +101,10 @@ const router = new Router({
       component:()=>import('./views/fatherson/father')
     },
     {
+      path:'/father2',
+      component:()=>import('./views/fatherson2/father2')
+    },
+    {
       path:'/store',
       component:()=>import('./views/vuexpage/store')
     },

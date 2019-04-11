@@ -1,13 +1,17 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import user from './module/user';
-
+import saveInLocal from './views/vuexpage/plugins/saveInLocal'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  // strict:false, // 严格模式
+  strict:process.env.NODE_ENV === 'developer',
   state: {
-    testname: 'haha'
+    testname: 'haha',
+    stateVal:'666'
   },
+
   getters: {
     // 当多个地方需要对 state.testname 进行拼接、截取操作时，getters就可以统一处理了，否则，可在xxx.vue调用时再处理
     testLastName: (state) => {
@@ -27,6 +31,9 @@ export default new Vuex.Store({
     SET_STATE_TESTAGE (state) {
       Vue.set(state, 'testage', '12');   // 响应式
       // state.testage='12' // 一般
+    },
+    SET_STATE_VAL(state,params){
+      state.stateVal=params
     }
   },
   actions: {
@@ -59,7 +66,8 @@ export default new Vuex.Store({
   },
   modules: {
     user,
-  }
+  },
+  plugins:[saveInLocal]
 });
 
 function apiGetName () {
