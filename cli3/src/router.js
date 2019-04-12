@@ -108,6 +108,10 @@ const router = new Router({
       path:'/store',
       component:()=>import('./views/vuexpage/store')
     },
+    {
+      path:'/axios',
+      component:()=>import('./views/axios')
+    },
   ]
 });
 let setTitle = (title => {
