@@ -18,7 +18,7 @@ class HttpRequest {
   interceptors (instance) {
     instance.interceptors.request.use(config => {
       // loading
-      console.log(config);
+      // console.log('请求的参数',config);
       Indicator.open();
       return config;
     }, error => {
@@ -33,7 +33,7 @@ class HttpRequest {
       return data;
     }, error => {
       Indicator.close();
-      return Promise.reject(error.response.data);
+      return Promise.reject(error);
     });
   }
 

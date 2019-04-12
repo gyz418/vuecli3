@@ -37,6 +37,10 @@
           url: url + '/posts'
           // url:'/posts'   // 加了代理proxy 所有访问都会加上代理前缀 http://localhost:1234  vue.config.js设置代理
         }).then(res => {
+          // console.log('res', res);
+          for(let i in res[0]){
+            console.log(i + ' ------ ' + res[0][i]);
+          }
           this.list = res;
         });
       }
