@@ -112,6 +112,11 @@ const router = new Router({
       path:'/axios',
       component:()=>import('./views/axios')
     },
+    // 组件封装
+    {
+      path:'/counts',
+      component:()=>import('./views/counts')
+    },
   ]
 });
 let setTitle = (title => {
