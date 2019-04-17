@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = 'abc623fffhahaa'
+    var reg = /([a-z]\d)/
+    console.log(reg.test(str));
+    console.log(RegExp.$1);  // 获取第一个小括号匹配到的值   c6
+</script>
+</body>
+</html>

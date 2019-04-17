@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Node.appendChild
+<div id="main"></div>
+<div id="abc">
+    <p>123</p>
+    <p>124</p>
+</div>
+
+<script>
+  let $abc = document.getElementById('abc');
+  let $main = document.getElementById('main');
+  // Node.appendChild: 这个API有一个很有意思的行为：
+  // 如果被插入的节点已经存在于当前文档的文档树中,
+  // 则那个节点会首先从原先的位置移除,然后再插入到新的位置.
+  // 最终， 页面的结果，p节点从原来的#abc删除，追加到#main中了
+  /*
+  *
+  * <div id="main">
+  *    <p>123</p>
+  *    <p>124</p>
+  * </div>
+  * <div id="abc"></div>
+  *
+  * */
+  while (child = $abc.firstChild) {   // el.firstChild拿到的也始终是第一个子节点
+    $main.appendChild(child);
+  }
+
+  $main.appendChild($abc);
+</script>
+</body>
+</html>

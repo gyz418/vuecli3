@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p>{{name}}</p>
+    <p>{{age}}</p>
+    <p k-text="name"></p>
+    <button @click="changeName">btn</button>
+    <input type="text" k-model="name">
+    <div k-html="html"></div>
+</div>
+<script src="compile.js"></script>
+<script src="kvue.js"></script>
+<script>
+  let vue = new KVUE({
+    el:'#app',
+    data:{
+      name:'kang',
+      age:12,
+      html:'<h1>this is h1</h1>'
+    },
+    created(){
+      console.log('haha');
+      setTimeout(()=>{
+        this.name='jia'
+      },1500)
+    },
+    methods:{
+      changeName(){
+        this.name='haha'
+      }
+    }
+  })
+  // new Compile('#app',vue)
+   /*
+   // 测试 Object.defineProperty
+   let vue = new KVUE({
+      el:'#app',
+      data:{
+        test:'i am test',
+        foo:{
+          bar:'bar'
+        }
+      }
+    })
+    vue.$data.test='hello'
+    vue.$data.foo.bar='aaaaa'*/
+</script>
+</body>
+</html>
