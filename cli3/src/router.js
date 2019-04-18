@@ -117,6 +117,11 @@ const router = new Router({
       path:'/counts',
       component:()=>import('./views/counts')
     },
+    // emit
+    {
+      path:'/emit',
+      component:()=>import('./views/emit/father')
+    },
   ]
 });
 let setTitle = (title => {
