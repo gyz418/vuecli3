@@ -127,6 +127,11 @@ const router = new Router({
       path:'/jsx',
       component:()=>import('./views/jsx/jsx2')
     },
+    // slot
+    {
+      path:'/slot',
+      component:()=>import('./views/slot/list')
+    },
   ]
 });
 let setTitle = (title => {
