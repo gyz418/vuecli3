@@ -1,7 +1,7 @@
 <template>
     <div>
       <item :list="list">
-        <div slot-scope="obj" :attr="obj.age">hello,{{obj.age}} </div>
+        <div slot="aa" slot-scope="obj" :attr="obj.age">hello,{{obj.age}} </div>
       </item>
     </div>
 </template>
