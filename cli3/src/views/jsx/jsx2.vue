@@ -1,6 +1,6 @@
 <template>
     <div>
-      <jsx :render="render" :name="name"></jsx>
+      <jsx :render="render"></jsx>
     </div>
 </template>
 
@@ -13,14 +13,14 @@
     },
     data () {
       return {
-        name:300
+        name:33400
       };
     },
     methods: {
-      render(h,name){
+      render(h){
         // jsx  利用jsx给组件个性化添加样式等   点击事件用  nativeOn-click   $emit事件直接   on-xxx={}
         return (
-          <countup nativeOn-click={this.handleClick} on-mycount={this.mycount} endVal={name} style={{color:'red'}}></countup>
+          <countup nativeOn-click={this.handleClick} on-mycount={this.mycount} endVal={this.name} style={{color:'red'}}></countup>
         )
       },
       handleClick(e){
