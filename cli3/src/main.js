@@ -32,7 +32,7 @@ const getLiEleArr=(h)=>{
 new Vue({
   router,
   store,
-  // render: h => h(App)
+  render: h => h(App)
   // render:h=>h(emit)
   // 渲染子组件 各种属性
   /*render:h=>h(countup,{
@@ -85,11 +85,11 @@ new Vue({
   h('span','ddd')
 ])*/
 // 渲染 v-for 列表
-  render:h=>h('div',[
+/*  render:h=>h('div',[
     h('ul',{
       on:{
         'click':handleClick
       }
     },getLiEleArr(h)),
-  ])
+  ])*/
 }).$mount('#app');

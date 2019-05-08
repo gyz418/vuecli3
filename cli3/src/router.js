@@ -122,6 +122,11 @@ const router = new Router({
       path:'/emit',
       component:()=>import('./views/emit/father')
     },
+    // jsx
+    {
+      path:'/jsx',
+      component:()=>import('./views/jsx/jsx')
+    },
   ]
 });
 let setTitle = (title => {
