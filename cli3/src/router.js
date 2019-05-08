@@ -125,7 +125,7 @@ const router = new Router({
     // jsx
     {
       path:'/jsx',
-      component:()=>import('./views/jsx/jsx')
+      component:()=>import('./views/jsx/jsx2')
     },
   ]
 });

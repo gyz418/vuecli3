@@ -35,6 +35,7 @@
         const count = new CountUp(this.eleId,this.startVal,this.endVal);
         setTimeout(() => {
           count.start();
+          this.$emit('mycount',this.endVal)
         }, 0);
       });
     },
