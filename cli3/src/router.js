@@ -132,6 +132,11 @@ const router = new Router({
       path:'/slot',
       component:()=>import('./views/slot/list')
     },
+    // vue2 新特性
+    {
+      path:'/vue2',
+      component:()=>import('./views/vue2')
+    },
   ]
 });
 let setTitle = (title => {
