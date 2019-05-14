@@ -1,7 +1,7 @@
 const path = require('path')
 const resolve = dir => path.join(__dirname, dir);
 module.exports = {
-  baseUrl: './',  // 解决打包后的路径问题
+  publicPath: './',  // 解决打包后的路径问题
   lintOnSave: false,
   chainWebpack: config => {
     config.resolve.alias

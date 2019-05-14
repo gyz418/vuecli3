@@ -8,12 +8,17 @@
       <p>{{lastName}}</p>
       <p>{{firstName}}</p>
       {{arr}}
-      <input type="text" v-model.lazy="msg">
+      <input type="text" v-model.lazy="msg">   <!-- lazy 取消了数据绑定，只有在 change事件才会继续响应-->
+      <son>newVal</son> <!-- 中间有值的话，可以替换插槽-->
     </div>
 </template>
 
 <script>
+  import son from './vue2son'
   export default {
+    components:{
+      son
+    },
     data(){
       return{
         obj:'',
