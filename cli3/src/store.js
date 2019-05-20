@@ -1,15 +1,17 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import user from './module/user';
-import saveInLocal from './views/vuexpage/plugins/saveInLocal'
+import saveInLocal from './views/vuexpage/plugins/saveInLocal';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   // strict:false, // 严格模式
-  strict:process.env.NODE_ENV === 'developer',
+  strict: process.env.NODE_ENV === 'developer',
   state: {
     testname: 'haha',
-    stateVal:'666'
+    stateVal: '666',
+    mixinNum: 999,  // 通过 store 来判断，很多组件显示，且只能有一个组件修改了值，
   },
 
   getters: {
@@ -17,7 +19,10 @@ export default new Vuex.Store({
     testLastName: (state) => {
       // return state.testname.substr(-1)
       return state.testname + ' abc';
-    }
+    },
+    getMixinNum: (state) => {
+      return state.mixinNum;
+    },
   },
   // 修改 state
   mutations: {
@@ -32,8 +37,11 @@ export default new Vuex.Store({
       Vue.set(state, 'testage', '12');   // 响应式
       // state.testage='12' // 一般
     },
-    SET_STATE_VAL(state,params){
-      state.stateVal=params
+    SET_STATE_VAL (state, params) {
+      state.stateVal = params;
+    },
+    setMixin (state) {
+      state.mixinNum++;
     }
   },
   actions: {
@@ -57,17 +65,23 @@ export default new Vuex.Store({
       } catch (e) {
         console.log(e);
       }
-    }
-                                                      // rootState指模块的上级根 state
+    },
+    // rootState指模块的上级根 state
     //  updateTestName({commit,state,rootState，dispatch}){
     //    dispatch('xxx','')
     //  },
     // xxx(){},
+
+    addMixin ({state, commit}) {
+      if (state.mixinNum !== 1000) {
+        commit('setMixin');    // 提交 mutation   这里控制只执行一次
+      }
+    }
   },
   modules: {
     user,
   },
-  plugins:[saveInLocal]
+  // plugins: [saveInLocal]   // 把 state保存到 本地 ，刷新不丢失
 });
 
 function apiGetName () {

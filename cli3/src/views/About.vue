@@ -4,11 +4,13 @@
     <h2>动态路由访问  http://localhost:8080/#/about/xxx</h2>
     <h2>动态路由参数:{{$route.params.id}}</h2>
     props:{{id}}, {{$route.params.id}} 依然生效
+    {{$store.state.mixinNum}}
   </div>
 </template>
 <script>
   import myMixin from '../myMixin'
   export default {
+    name:'about',
     mixins:[myMixin],   // 混入
     props:{
       id:{

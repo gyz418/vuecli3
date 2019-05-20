@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    {{'mixinNum: '+$store.state.mixinNum}}
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <p @click="back">返回</p>

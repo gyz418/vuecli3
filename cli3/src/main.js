@@ -17,6 +17,10 @@ Vue.config.productionTip = false;
 // import myMixin from './myMixin'
 // Vue.mixin(myMixin)  // 全局mixin
 
+import mixinPlugin from './mixinPlugin'
+Vue.use(mixinPlugin)   // use  插件
+// Vue.use(mixinPlugin(['about','home']))   // 传参数组
+
 const handleClick=e=>{
   e.stopPropagation()
   console.log(e);
