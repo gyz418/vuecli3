@@ -7,7 +7,9 @@
   </div>
 </template>
 <script>
+  import myMixin from '../myMixin'
   export default {
+    mixins:[myMixin],   // 混入
     props:{
       id:{
         type:String,

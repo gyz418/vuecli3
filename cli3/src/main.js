@@ -14,6 +14,9 @@ Vue.prototype.$Bus = Bus;
 Vue.config.productionTip = false;
 // Vue.use(MintUI)
 
+// import myMixin from './myMixin'
+// Vue.mixin(myMixin)  // 全局mixin
+
 const handleClick=e=>{
   e.stopPropagation()
   console.log(e);
