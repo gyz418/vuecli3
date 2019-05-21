@@ -9,7 +9,8 @@
 </template>
 
 <script>
-  const url = 'http://localhost:1234';
+  // const url = 'http://localhost:1234';
+  const url = 'http://localhost:3000';
   // import axios from 'axios'
   import axios from '../tools/axios';  // 封装过的 axios
   export default {
@@ -34,11 +35,17 @@
         axios.request({
           method: 'get',
           // url:url+'/posts'
-          url: url + '/posts'
+          // url: url + '/posts'
+          // url:'/list'
           // url:'/posts'   // 加了代理proxy 所有访问都会加上代理前缀 http://localhost:1234  vue.config.js设置代理
+          // url:'/api/a'
+          url:'/api/b'
         }).then(res => {
+          console.log('res',res);
           this.list = res;
-        });
+        }).catch(err=>{
+          console.log('err',err);
+        })
       }
     }
   };

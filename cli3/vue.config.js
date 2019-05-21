@@ -16,5 +16,14 @@ module.exports = {
     * 取消代理
     * axios.get('http://localhost:3000/getuser') 产生跨域。
     * */
+    proxy:{
+      '/api':{   // 代理的标志     // node api.js 开后端服务
+        target:'http://localhost:3000/',   //  /api/b  => http://localhost:3000/b
+        changeOrigin: true,
+        pathRewrite:{
+          '^/api':''
+        }
+      }
+    }
   }
 };
