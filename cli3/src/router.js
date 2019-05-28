@@ -137,6 +137,10 @@ const router = new Router({
       path:'/vue2',
       component:()=>import('./views/vue2')
     },
+    {
+      path:'/xss',
+      component:()=>import('./views/xss')
+    },
   ]
 });
 let setTitle = (title => {
