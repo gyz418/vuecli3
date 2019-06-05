@@ -1,5 +1,7 @@
 <template>
     <div>
+      <p>这是新加的内容</p>
+      <p>这是改过的内容222222222</p>
       <p>'用标签加js 可引发v-html的 xss  &lt;</p>
       <!--直接  <script>alert('xss')</script>会被浏览器在浏览器加载页面的时候阻止了注入脚本。-->
       <input type="text" v-model="age">
