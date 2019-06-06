@@ -141,6 +141,10 @@ const router = new Router({
       path:'/xss',
       component:()=>import('./views/xss')
     },
+    {
+      path:'/koa',
+      component:()=>import('./views/koa')
+    },
   ]
 });
 let setTitle = (title => {
